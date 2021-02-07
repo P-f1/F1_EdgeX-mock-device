@@ -29,8 +29,10 @@ if [[ -v TargetServer ]]
 then
 	echo "Deploy Remotely !!"
 	#docker-compose --context $DockerContext up -d
+	docker-compose -H "ssh://$Username@$TargetServer" rm -f
 	docker-compose -H "ssh://$Username@$TargetServer" up --build
 else
 	echo "Deploy Locally !!"
-	docker-compose up
+	docker-compose rm -f
+	docker-compose up --build
 fi

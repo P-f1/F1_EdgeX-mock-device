@@ -2,6 +2,7 @@ version: '3.6'
 
 services:
   mock-device:
+    restart: always
     build: mqtt-scripts-2-dev
     container_name: mqtt-scripts
-    command: --url mqtt://mqtt-broker-ip --dir /app/scripts    
+    command: --url mqtt://192.168.1.152 --dir /app/scripts    

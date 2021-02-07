@@ -2,7 +2,6 @@ node_modules
 package-lock.json
 
 /doc
-/scripts*
 /testscripts*
 /.nyc_output
 /test.js

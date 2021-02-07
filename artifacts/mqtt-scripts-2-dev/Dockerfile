@@ -5,8 +5,8 @@ WORKDIR /app
 
 RUN npm install
 
-RUN cd sandbox \
-    npm install
+RUN cd sandbox
+RUN npm install
 
 # ---------------------------------------------------------
 
