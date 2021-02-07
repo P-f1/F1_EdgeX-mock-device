@@ -1,0 +1,99 @@
+{
+  "name": "mqtt-scripts",
+  "version": "1.2.2",
+  "description": "Node.js based script runner for use in MQTT based Smart Home environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "camo-purge ; xo && nyc mocha test.js --exit && nyc report --reporter=text-lcov | coveralls --force",
+    "testonly": "mocha test.js --exit",
+    "lintfix": "xo --fix"
+  },
+  "bin": {
+    "mqtt-scripts": "index.js"
+  },
+  "author": "Sebastian 'hobbyquaker' Raff <hobbyquaker@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-compiler2": "^0.1.6",
+    "coffeescript": "^2.5.1",
+    "mqtt": "^3.0.0",
+    "mqtt-wildcard": "^3.0.9",
+    "node-schedule": "^1.3.2",
+    "obj-ease": "^1.0.1",
+    "watch": "^1.0.2",
+    "yalm": "^4.1.0",
+    "yargs": "^14.0.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "engineStrict": true,
+  "preferGlobal": true,
+  "devDependencies": {
+    "camo-purge": "1.0.2",
+    "coveralls": "3.0.2",
+    "gulp": "4.0.0",
+    "jsdoc-to-markdown": "^5.0.0",
+    "mocha": "5.2.0",
+    "nyc": "^14.1.1",
+    "should": "13.2.3",
+    "stream-splitter": "0.3.2",
+    "timekeeper": "2.1.2",
+    "xo": "0.23.0"
+  },
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hobbyquaker/mqtt-scripts"
+  },
+  "keywords": [
+    "MQTT",
+    "javascript",
+    "coffeescript",
+    "node.js",
+    "npm",
+    "sandbox",
+    "vm",
+    "Smart",
+    "Home",
+    "Internet",
+    "of",
+    "Things",
+    "IoT"
+  ],
+  "bugs": {
+    "url": "https://github.com/hobbyquaker/mqtt-scripts/issues"
+  },
+  "homepage": "https://github.com/hobbyquaker/mqtt-scripts",
+  "xo": {
+    "space": 4,
+    "ignores": [
+      "scripts/**",
+      "testscripts/**",
+      "test.js",
+      "Gulpfile.js",
+      "mockdate.js"
+    ],
+    "rules": {
+      "unicorn/catch-error-name": 1,
+      "prefer-spread": 1,
+      "import/order": ["error", {
+        "pathGroups": [
+          {
+            "pattern": "./package.json",
+            "group": "builtin"
+          }
+        ]
+      }]
+    }
+  },
+  "nyc": {
+    "include": [
+      "index.js",
+      "config.js",
+      "sandbox/*.js"
+    ]
+  }
+}

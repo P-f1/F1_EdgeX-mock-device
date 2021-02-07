@@ -1,0 +1,26 @@
+node_modules
+package-lock.json
+
+/doc
+/scripts*
+/testscripts*
+/.nyc_output
+/test.js
+/Gulpfile.js
+/mockdate.js
+/.npmignore
+
+
+## Git
+/.git
+/.gitignore
+
+## Docker
+Dockerfile
+/.dockerignore
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
