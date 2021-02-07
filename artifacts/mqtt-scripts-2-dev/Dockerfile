@@ -1,7 +1,5 @@
 FROM node as jsbuilder
 
-COPY ../mock-device.js /scripts
-
 COPY . /app
 WORKDIR /app
 

@@ -19,7 +19,9 @@ else
     mkdir -p ./$DeployType
 fi
 
-cp -R ../artifacts/* ./$DeployType
+cp -R ../artifacts/mqtt-scripts-2-dev ./$DeployType
+cp -R ../artifacts/docker-compose.yml ./$DeployType
+cp -R ../artifacts/scripts ./$DeployType/mqtt-scripts-2-dev
 
 cd ./$DeployType
 

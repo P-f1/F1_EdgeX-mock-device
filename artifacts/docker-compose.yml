@@ -4,4 +4,4 @@ services:
   mock-device:
     build: mqtt-scripts-2-dev
     container_name: mqtt-scripts
-    command: --url mqtt://mqtt-broker-ip --dir /scripts    
+    command: --url mqtt://mqtt-broker-ip --dir /app/scripts    
