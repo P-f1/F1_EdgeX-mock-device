@@ -1,8 +1,12 @@
-version: '3.6'
-
+networks:
+  edgex-network:
+    driver: bridge
 services:
   mock-device:
-    restart: always
     build: mqtt-scripts-2-dev
+    command: --url mqtt://192.168.1.152 --dir /app/scripts
     container_name: mqtt-scripts
-    command: --url mqtt://192.168.1.152 --dir /app/scripts    
+    networks:
+    - edgex-network
+    restart: always
+version: "3.6"
